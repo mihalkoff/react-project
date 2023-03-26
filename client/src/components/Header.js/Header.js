@@ -1,55 +1,42 @@
 export const Header = () => {
     return (
-        <div className="hero_area">
-            <header className="header_section">
-                <div className="container-fluid">
-                    <nav className="navbar navbar-expand-lg custom_nav-container ">
-                        <a className="navbar-brand" href="index.html">
-                            <img src="images/logo.png" alt="" />
-                            <span>
-                                Jewellery shop
-                            </span>
-                        </a>
-                        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span className="navbar-toggler-icon"></span>
-                        </button>
+        <header id="header" className="header fixed-top d-flex align-items-center">
+            <div className="container d-flex align-items-center justify-content-between">
 
-                        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                            <div className="d-flex ml-auto flex-column flex-lg-row align-items-center">
-                                <ul className="navbar-nav  ">
-                                    <li className="nav-item active">
-                                        <a className="nav-link" href="index.html">Home <span className="sr-only">(current)</span></a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a className="nav-link" href="about.html">Jewellery</a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a className="nav-link" href="jewellery.html">Add jewel</a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a className="nav-link" href="contact.html">Login</a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a className="nav-link" href="#">Register</a>
-                                    </li>
-                                </ul>
-
-                            </div>
-                            <div className="quote_btn-container ">
-                                <a href="">
-                                    <img src="images/cart.png" alt="" />
-                                    <div className="cart_number">
-                                        0
-                                    </div>
-                                </a>
-                                <form className="form-inline">
-                                    <button className="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
-                                </form>
-                            </div>
-                        </div>
-                    </nav>
+                <div id="logo">
+                    <h1><a href="index.html"><span>e</span>Startup</a></h1>
                 </div>
-            </header>
-        </div>
+
+                <nav id="navbar" className="navbar">
+                    <ul>
+                        <li><a className="nav-link scrollto active" href="#hero">Home</a></li>
+                        <li><a className="nav-link scrollto" href="#about-us">About</a></li>
+                        <li><a className="nav-link scrollto" href="#features">Features</a></li>
+                        <li><a className="nav-link scrollto" href="#screenshots">Screenshots</a></li>
+                        <li><a className="nav-link scrollto" href="#team">Team</a></li>
+                        <li><a className="nav-link scrollto" href="#pricing">Pricing</a></li>
+                        <li className="dropdown"><a href="#"><span>Drop Down</span> <i className="bi bi-chevron-down"></i></a>
+                            <ul>
+                                <li><a href="#">Drop Down 1</a></li>
+                                <li className="dropdown"><a href="#"><span>Deep Drop Down</span> <i className="bi bi-chevron-right"></i></a>
+                                    <ul>
+                                        <li><a href="#">Deep Drop Down 1</a></li>
+                                        <li><a href="#">Deep Drop Down 2</a></li>
+                                        <li><a href="#">Deep Drop Down 3</a></li>
+                                        <li><a href="#">Deep Drop Down 4</a></li>
+                                        <li><a href="#">Deep Drop Down 5</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Drop Down 2</a></li>
+                                <li><a href="#">Drop Down 3</a></li>
+                                <li><a href="#">Drop Down 4</a></li>
+                            </ul>
+                        </li>
+                        <li><a className="nav-link scrollto" href="#contact">Contact</a></li>
+                    </ul>
+                    <i className="bi bi-list mobile-nav-toggle"></i>
+                </nav>
+            </div>
+        </header>
     );
 };
