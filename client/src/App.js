@@ -11,7 +11,9 @@ function App() {
 		<div>
 			<Header />
 			<main id="main">
-				<Home />
+				<Routes>
+					<Route path='/' element={<Home />} />
+				</Routes>
 			</main>
 			<Footer />
 		</div>
