@@ -19,7 +19,7 @@ export const Login = () => {
                                 <div className="form-group bottom-space">
                                     <input type="password" className="form-control" name="password" id="login-password" placeholder="Password"/>
                                 </div>
-                                <div className="form-group bottom-space">
+                                <div className="text-center bottom-space">
                                     <button className="btn btn-primary" type="submit">Login</button>
                                 </div>
                             </form>

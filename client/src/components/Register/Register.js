@@ -22,7 +22,7 @@ export const Register = () => {
                                 <div className="form-group bottom-space">
                                     <input type="password" autocomplete="on" className="form-control" name="confirm-password" id="confirm-password" placeholder="Confirm Password"/>
                                 </div>
-                                <div className="text-center" style={{marginBottom: '1rem'}}>
+                                <div className="text-center bottom-space">
                                     <button className="btn btn-primary" type="submit">Register</button>
                                 </div>
                             </form>
