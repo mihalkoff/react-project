@@ -1,3 +1,5 @@
+import styles from './login.module.css'; 
+
 export const Login = () => {
     return (
         <section id="contact" className="padd-section">
@@ -11,11 +13,11 @@ export const Login = () => {
                     <div className="col-lg-5 col-md-8">
                         <div className="form">
                             <form className="contactForm">
-                                <div className="form-group" style={{marginBottom: '1rem'}}>
+                                <div className={styles.bottomSpace}>
                                     <input type="email" className="form-control" name="email" id="email" placeholder="Your Email"/>
                                 </div>
                                 <div className="form-group" style={{marginBottom: '1rem'}}>
-                                    <input type="password" autocomplete="on" className="form-control" name="password" id="login-password" placeholder="Password"/>
+                                    <input type="password" className="form-control" name="password" id="login-password" placeholder="Password"/>
                                 </div>
                                 <div className="text-center" style={{marginBottom: '1rem'}}>
                                     <button className="btn btn-primary" type="submit">Login</button>
