@@ -15,13 +15,13 @@ export const Login = () => {
                                     <input type="email" className="form-control" name="email" id="email" placeholder="Your Email"/>
                                 </div>
                                 <div className="form-group" style={{marginBottom: '1rem'}}>
-                                    <input type="password" autocomplete="on" className="form-control" name="password" id="subject" placeholder="Password"/>
+                                    <input type="password" autocomplete="on" className="form-control" name="password" id="login-password" placeholder="Password"/>
                                 </div>
                                 <div className="text-center" style={{marginBottom: '1rem'}}>
-                                    <button className="btn btn-primary" type="submit">Sign in</button>
+                                    <button className="btn btn-primary" type="submit">Login</button>
                                 </div>
                             </form>
-                            <p>Don't have an account yet?  <a href="/register">Register</a> </p>
+                            <p>If you don't have profile click <a href="/register">here</a></p>
                         </div>
                     </div>
                 </div>
