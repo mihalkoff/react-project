@@ -7,6 +7,7 @@ import { Login } from './components/Login/Login';
 import { Register } from './components/Register/Register';
 import { Catalog } from './components/Catalog/Catalog';
 import { Create } from './components/Create/Create';
+import { Details } from './components/Details/Details';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
 					<Route path='/register' element={<Register />} />
 					<Route path='/catalog' element={<Catalog />} />
 					<Route path='/create' element={<Create />} />
+					<Route path='/catalog/:id' element={<Details />} />
 				</Routes>
 			</main>
 			<Footer />
