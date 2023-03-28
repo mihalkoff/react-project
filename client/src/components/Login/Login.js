@@ -1,4 +1,4 @@
-import styles from './login.module.css'; 
+import './login.css'; 
 
 export const Login = () => {
     return (
@@ -13,13 +13,13 @@ export const Login = () => {
                     <div className="col-lg-5 col-md-8">
                         <div className="form">
                             <form className="contactForm">
-                                <div className={styles.bottomSpace}>
+                                <div className="form-group bottom-space">
                                     <input type="email" className="form-control" name="email" id="email" placeholder="Your Email"/>
                                 </div>
-                                <div className="form-group" style={{marginBottom: '1rem'}}>
+                                <div className="form-group bottom-space">
                                     <input type="password" className="form-control" name="password" id="login-password" placeholder="Password"/>
                                 </div>
-                                <div className="text-center" style={{marginBottom: '1rem'}}>
+                                <div className="form-group bottom-space">
                                     <button className="btn btn-primary" type="submit">Login</button>
                                 </div>
                             </form>
