@@ -3,7 +3,7 @@ export const Navigation = () => {
         <nav id="navbar" className="navbar">
             <ul>
                 <li><a className="nav-link" href="/">Home</a></li>
-                <li><a className="nav-link" href="/catalog">Comics catalog</a></li>
+                <li><a className="nav-link" href="/catalog">Catalog</a></li>
                 <li><a className="nav-link" href="/create">Add comics</a></li>
                 <li><a className="nav-link" href="/login">Login</a></li>
                 <li><a className="nav-link" href="/register">Register</a></li>
