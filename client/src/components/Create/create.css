@@ -1,0 +1,106 @@
+#add-comics {
+    background: #fff;
+}
+
+#add-comics .info {
+    color: #222;
+}
+
+#add-comics .info i {
+    font-size: 32px;
+    color: #71c55d;
+    float: left;
+}
+
+#add-comics .info p {
+    padding: 0 0 10px 50px;
+    margin-bottom: 20px;
+    line-height: 22px;
+    font-size: 14px;
+}
+
+#add-comics .info .email p {
+    padding-top: 5px;
+}
+
+#add-comics .social-links {
+    padding-bottom: 20px;
+}
+
+#add-comics .social-links a {
+    font-size: 18px;
+    display: inline-block;
+    background: #71c55d;
+    color: #fff;
+    line-height: 1;
+    padding: 6px 0 8px 0;
+    border-radius: 50%;
+    text-align: center;
+    width: 36px;
+    height: 36px;
+    transition: 0.3s;
+}
+
+#add-comics .social-links a:hover {
+    background: #55b03f;
+    color: #fff;
+}
+
+#add-comics .form #sendmessage {
+    color: #71c55d;
+    border: 1px solid #71c55d;
+    display: none;
+    text-align: center;
+    padding: 15px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+#add-comics .form #errormessage {
+    color: red;
+    display: none;
+    border: 1px solid red;
+    text-align: center;
+    padding: 15px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+#add-comics .form #sendmessage.show,
+#add-comics .form #errormessage.show,
+#add-comics .form .show {
+    display: block;
+}
+
+#add-comics .form .validation {
+    color: red;
+    display: block;
+    margin: 0 0 20px;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+#add-comics .form input,
+#add-comics .form textarea {
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 14px;
+    padding: 12px 10px;
+    line-height: 1;
+}
+
+#add-comics .form button[type="submit"] {
+    background: #71c55d;
+    border: 0;
+    padding: 10px 24px;
+    color: #fff;
+    transition: 0.4s;
+}
+
+#add-comics .form button[type="submit"]:hover {
+    background: #92d283;
+}
+
+.bottom-space {
+    margin-bottom: 1rem;
+}
