@@ -1,6 +1,10 @@
-import './login.css'; 
+import './login.css';
+import { useContext } from 'react';
+import { AuthContext } from '../../contexts/AuthContext';
 
 export const Login = () => {
+    const { onLoginSubmit } = useContext(AuthContext);
+
     return (
         <section id="contact" className="padd-section">
             <div className="container">
@@ -12,7 +16,7 @@ export const Login = () => {
                 <div className="row justify-content-center">
                     <div className="col-lg-5 col-md-8">
                         <div className="form">
-                            <form className="contactForm">
+                            <form id="login" className="contactForm" onSubmit={onLoginSubmit}>
                                 <div className="form-group bottom-space">
                                     <input type="email" className="form-control" name="email" id="email" placeholder="Your Email"/>
                                 </div>
