@@ -18,9 +18,8 @@ function App() {
 	// users state
 	const [auth, setAuth] = useState({});
 
-	const onLoginSubmit = async (e) => {
-		e.preventDefault();
-		console.log(Object.fromEntries(new FormData(e.target)));
+	const onLoginSubmit = async (data) => {
+		console.log(data);
 	};
 
 	return (
