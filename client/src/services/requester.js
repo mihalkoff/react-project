@@ -1,25 +1,32 @@
-export const request = async (method, url, data) => {
-    const options = {};
-    if(method !== 'GET') {
-        options.method = method;
+export const request = async (method = 'GET', url, data) => {
 
-        if(data) {
-            options.headers = {
-                'content-type': 'application/json',
-            };
-
-            options.body = JSON.stringify(data);
-        }
+    const options = {
+        method,
+        headers: {},
     }
 
-    const response = await fetch(url, options);
+    if (data != undefined) {
+        options.headers['Content-Type'] = 'application/json';
+        options.body = JSON.stringify(data);
+    }
 
     try {
-        const result = await response.json();
+        const response = await fetch(url, options);
 
-        return result;
-    } catch (error) {
-        alert(error);
+        if (response.ok === false) {
+            const error = await response.json();
+            throw new Error(error.message);
+        }
+
+        if (response.status == 204) {
+            return response;
+        } else {
+            return response.json();
+        }
+
+    } catch (err) {
+        alert(err.message);
+        throw err;
     }
 };
 

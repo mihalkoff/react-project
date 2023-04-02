@@ -22,6 +22,7 @@ function App() {
 	const onLoginSubmit = async (data) => {
 		const result = await authService.login(data);
 		console.log(result);
+		setAuth(result);
 	};
 
 	return (
