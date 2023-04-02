@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 
 import { Routes, Route } from 'react-router-dom';
 import { AuthContext } from './contexts/AuthContext';
+import * as authService from './services/authService';
 
 import { Footer } from "./components/Footer/Footer";
 import { Header } from "./components/Header/Header";
@@ -19,7 +20,8 @@ function App() {
 	const [auth, setAuth] = useState({});
 
 	const onLoginSubmit = async (data) => {
-		console.log(data);
+		const result = await authService.login(data);
+		console.log(result);
 	};
 
 	return (
