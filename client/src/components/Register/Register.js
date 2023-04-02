@@ -17,10 +17,10 @@ export const Register = () => {
                                     <input type="email" className="form-control" name="email" id="email" placeholder="Your Email"/>
                                 </div>
                                 <div className="form-group bottom-space">
-                                    <input type="password" autocomplete="on" className="form-control" name="password" id="register-password" placeholder="Password"/>
+                                    <input type="password" autoComplete="on" className="form-control" name="password" id="register-password" placeholder="Password"/>
                                 </div>
                                 <div className="form-group bottom-space">
-                                    <input type="password" autocomplete="on" className="form-control" name="confirm-password" id="confirm-password" placeholder="Confirm Password"/>
+                                    <input type="password" autoComplete="on" className="form-control" name="confirm-password" id="confirm-password" placeholder="Confirm Password"/>
                                 </div>
                                 <div className="text-center bottom-space">
                                     <button className="btn btn-primary" type="submit">Register</button>
