@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState, useEffect } from 'react';
 
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import { AuthContext } from './contexts/AuthContext';
 import * as authService from './services/authService';
 
@@ -19,10 +19,13 @@ function App() {
 	// users state
 	const [auth, setAuth] = useState({});
 
+	const navigate = useNavigate();
+
 	const onLoginSubmit = async (data) => {
 		const result = await authService.login(data);
-		console.log(result);
 		setAuth(result);
+
+		navigate('/');
 	};
 
 	return (
