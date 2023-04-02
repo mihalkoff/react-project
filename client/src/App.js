@@ -28,8 +28,15 @@ function App() {
 		navigate('/');
 	};
 
+	const context = {
+		onLoginSubmit,
+		userId: auth._id,
+		token: auth.accessToken,
+		userEmail: auth.email,
+	};
+
 	return (
-		<AuthContext.Provider value={{onLoginSubmit}}>
+		<AuthContext.Provider value={context}>
 			<div>
 				<Header />
 				<main id="main">
