@@ -27,7 +27,8 @@ export const Login = () => {
                                     <input 
                                         type="email" 
                                         className="form-control" 
-                                        name="email" id="email" 
+                                        name="email" 
+                                        id="email" 
                                         placeholder="Your Email"
                                         value={ formValues.email }
                                         onChange={ onChangeHandler }
