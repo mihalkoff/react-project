@@ -3,12 +3,12 @@ import { useContext } from "react";
 import { AuthContext } from "../../../contexts/AuthContext";
 
 export const Navigation = () => {
-    const { token } = useContext(AuthContext);
+    const { token, userEmail } = useContext(AuthContext);
 
     return (
         <nav id="navbar" className="navbar">
             <ul>
-                {token && <li>Hello, user!</li>}
+                {token && <span>Hello, {userEmail}!</span>}
                 <li><Link className="nav-link" to="/">Home</Link></li>
                 <li><Link className="nav-link" to="/catalog">Catalog</Link></li>
                 {token ? (
