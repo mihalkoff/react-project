@@ -13,6 +13,7 @@ import { Register } from './components/Register/Register';
 import { Catalog } from './components/Catalog/Catalog';
 import { Create } from './components/Create/Create';
 import { Details } from './components/Details/Details';
+import { Logout } from './components/Logout/Logout';
 
 
 function App() {
@@ -29,15 +30,22 @@ function App() {
 		navigate('/');
 	};
 
-	const context = {
+	const onLogout = async () => {
+        await authService.logout();
+
+        setAuth({});
+    };
+
+	const contextValues = {
 		onLoginSubmit,
+		onLogout,
 		userId: auth._id,
 		token: auth.accessToken,
 		userEmail: auth.email,
 	};
 
 	return (
-		<AuthContext.Provider value={context}>
+		<AuthContext.Provider value={contextValues}>
 			<>
 				<Header />
 				<main id="main">
@@ -45,6 +53,7 @@ function App() {
 						<Route path='/' element={<Home />} />
 						<Route path='/login' element={<Login />} />
 						<Route path='/register' element={<Register />} />
+						<Route path='/logout' element={<Logout />} />
 						<Route path='/catalog' element={<Catalog />} />
 						<Route path='/create' element={<Create />} />
 						<Route path='/catalog/:id' element={<Details />} />
