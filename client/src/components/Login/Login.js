@@ -2,6 +2,7 @@ import './login.css';
 import { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthContext';
 import { useForm } from '../../hooks/useForm';
+import { Link } from "react-router-dom";
 
 export const Login = () => {
     const { onLoginSubmit } = useContext(AuthContext);
@@ -47,7 +48,7 @@ export const Login = () => {
                                     <button className="btn btn-primary" type="submit">Login</button>
                                 </div>
                             </form>
-                            <p>If you don't have profile click <a href="/register">here</a></p>
+                            <p>If you don't have profile click <Link to="/register">here</Link></p>
                         </div>
                     </div>
                 </div>

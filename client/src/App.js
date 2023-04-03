@@ -37,7 +37,7 @@ function App() {
 
 	return (
 		<AuthContext.Provider value={context}>
-			<div>
+			<>
 				<Header />
 				<main id="main">
 					<Routes>
@@ -50,7 +50,7 @@ function App() {
 					</Routes>
 				</main>
 				<Footer />
-			</div>
+			</>
 		</AuthContext.Provider>
 	);
 }
