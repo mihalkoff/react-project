@@ -1,13 +1,17 @@
-export const request = async (method = 'GET', url, data) => {
+export const request = async (method = 'GET', token, url, data) => {
 
     const options = {
         method,
         headers: {},
     }
 
-    if (data != undefined) {
+    if (data !== undefined) {
         options.headers['Content-Type'] = 'application/json';
         options.body = JSON.stringify(data);
+    }
+
+    if (token) {
+        options.headers['X-Authorization'] = token;
     }
 
     try {
@@ -18,7 +22,7 @@ export const request = async (method = 'GET', url, data) => {
             throw new Error(error.message);
         }
 
-        if (response.status == 204) {
+        if (response.status === 204) {
             return response;
         } else {
             return response.json();
@@ -30,8 +34,12 @@ export const request = async (method = 'GET', url, data) => {
     }
 };
 
-export const get = request.bind(null, 'GET');
-export const post = request.bind(null, 'POST');
-export const put = request.bind(null, 'PUT');
-export const patch = request.bind(null, 'PATCH');
-export const del = request.bind(null, 'DELETE');
+export const requestFactory = (token) => {
+    return {
+        get: request.bind(null, 'GET', token),
+        post: request.bind(null, 'POST', token),
+        put: request.bind(null, 'PUT', token),
+        patch: request.bind(null, 'PATCH', token),
+        delete: request.bind(null, 'DELETE', token),
+    }
+};

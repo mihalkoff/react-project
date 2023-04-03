@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import { AuthContext } from './contexts/AuthContext';
-import * as authService from './services/authService';
+import { authServiceFactory } from './services/authService';
 
 import { Footer } from "./components/Footer/Footer";
 import { Header } from "./components/Header/Header";
@@ -18,8 +18,9 @@ import { Details } from './components/Details/Details';
 function App() {
 	// users state
 	const [auth, setAuth] = useState({});
-
 	const navigate = useNavigate();
+	const authService = authServiceFactory(auth.accessToken);
+
 
 	const onLoginSubmit = async (data) => {
 		const result = await authService.login(data);
