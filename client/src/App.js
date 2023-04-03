@@ -27,7 +27,21 @@ function App() {
 		const result = await authService.login(data);
 		setAuth(result);
 
-		navigate('/');
+		navigate('/catalog');
+	};
+
+	const onRegisterSubmit = async (values) => {
+		const { confirmPassword, ...registerData } = values;
+
+        if (confirmPassword !== registerData.password) {
+			alert("Passwords don't match!");
+            return;
+        }
+
+		const result = await authService.register(registerData);
+		setAuth(result);
+
+		navigate('/catalog');
 	};
 
 	const onLogout = async () => {
@@ -38,6 +52,7 @@ function App() {
 
 	const contextValues = {
 		onLoginSubmit,
+		onRegisterSubmit,
 		onLogout,
 		userId: auth._id,
 		token: auth.accessToken,
