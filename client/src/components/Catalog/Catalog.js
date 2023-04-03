@@ -1,4 +1,4 @@
-import styles from './catalog.css';
+import './catalog.css';
 
 export const Catalog = () => {
     return (
