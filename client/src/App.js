@@ -15,6 +15,7 @@ import { Catalog } from './components/Catalog/Catalog';
 import { Create } from './components/Create/Create';
 import { Details } from './components/Details/Details';
 import { Logout } from './components/Logout/Logout';
+import { Page404 } from './components/Page404/Page404';
 
 
 function App() {
@@ -91,6 +92,7 @@ function App() {
 						<Route path='/catalog' element={<Catalog />} />
 						<Route path='/create' element={<Create />} />
 						<Route path='/catalog/:id' element={<Details />} />
+						<Route path='*' element={<Page404 />} />
 					</Routes>
 				</main>
 				<Footer />
