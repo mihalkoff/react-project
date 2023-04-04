@@ -91,7 +91,7 @@ function App() {
 						<Route path='/logout' element={<Logout />} />
 						<Route path='/catalog' element={<Catalog />} />
 						<Route path='/create' element={<Create />} />
-						<Route path='/catalog/:id' element={<Details />} />
+						<Route path='/catalog/:comicsId' element={<Details />} />
 						<Route path='*' element={<Page404 />} />
 					</Routes>
 				</main>

@@ -1,3 +1,22 @@
 .bottom-space {
     margin-bottom: 1rem;
 }
+
+.editButton {
+    background-color: green;
+    margin-right: 5px;
+    color: white;
+}
+
+.editButton:hover {
+    background-color: green;
+}
+
+.deleteButton {
+    background-color: red;
+    color: white;
+}
+
+.deleteButton:hover {
+    background-color: red;
+}
