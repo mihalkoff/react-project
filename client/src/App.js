@@ -25,6 +25,12 @@ function App() {
 	const authService = authServiceFactory(auth.accessToken);
 	const comicsService = comicsServiceFactory(auth.accessToken);
 
+	useEffect(() => {
+        comicsService.getAll()
+            .then(result => {
+                setComics(result)
+            })
+    }, []);
 
 	const onLoginSubmit = async (data) => {
 		const result = await authService.login(data);
@@ -66,6 +72,7 @@ function App() {
 		onRegisterSubmit,
 		onLogout,
 		onCreateSubmit,
+		comics,
 		userId: auth._id,
 		token: auth.accessToken,
 		userEmail: auth.email,
