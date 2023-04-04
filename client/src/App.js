@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import { AuthContext } from './contexts/AuthContext';
 import { authServiceFactory } from './services/authService';
+import { comicsServiceFactory } from './services/comicsService';
 
 import { Footer } from "./components/Footer/Footer";
 import { Header } from "./components/Header/Header";
@@ -19,8 +20,10 @@ import { Logout } from './components/Logout/Logout';
 function App() {
 	// users state
 	const [auth, setAuth] = useState({});
+	const [comics, setComics] = useState([]);
 	const navigate = useNavigate();
 	const authService = authServiceFactory(auth.accessToken);
+	const comicsService = comicsServiceFactory(auth.accessToken);
 
 
 	const onLoginSubmit = async (data) => {
@@ -50,10 +53,19 @@ function App() {
         setAuth({});
     };
 
+	const onCreateSubmit = async (data) => {
+        const newComics = await comicsService.create(data);
+
+        setComics(state => [...state, newComics]);
+
+        navigate('/catalog');
+    };
+
 	const contextValues = {
 		onLoginSubmit,
 		onRegisterSubmit,
 		onLogout,
+		onCreateSubmit,
 		userId: auth._id,
 		token: auth.accessToken,
 		userEmail: auth.email,
