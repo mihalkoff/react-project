@@ -13,6 +13,7 @@ export const CatalogItem = ({
                 <div className="content-blog">
                     <h4><Link to={`/catalog/${_id}`}>{title}</Link></h4>
                     <span>{price} Euro</span>
+                    <button className="pull-right btn btn-info">Buy</button>   
                 </div>
             </div>
         </div>
