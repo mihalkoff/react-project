@@ -16,6 +16,7 @@ import { Create } from './components/Create/Create';
 import { Details } from './components/Details/Details';
 import { Logout } from './components/Logout/Logout';
 import { Page404 } from './components/Page404/Page404';
+import { Edit } from './components/Edit/Edit';
 
 
 function App() {
@@ -68,11 +69,20 @@ function App() {
         navigate('/catalog');
     };
 
+	const onEditSubmit = async (values) => {
+        const result = await comicsService.edit(values._id, values);
+
+        setComics(state => state.map(x => x._id === values._id ? result : x))
+
+        navigate(`/catalog/${values._id}`);
+    }
+
 	const contextValues = {
 		onLoginSubmit,
 		onRegisterSubmit,
 		onLogout,
 		onCreateSubmit,
+		onEditSubmit,
 		comics,
 		userId: auth._id,
 		token: auth.accessToken,
@@ -92,6 +102,7 @@ function App() {
 						<Route path='/catalog' element={<Catalog />} />
 						<Route path='/create' element={<Create />} />
 						<Route path='/catalog/:comicsId' element={<Details />} />
+						<Route path='/catalog/:comicsId/edit' element={<Edit />} />
 						<Route path='*' element={<Page404 />} />
 					</Routes>
 				</main>

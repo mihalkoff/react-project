@@ -26,6 +26,7 @@ export const Details = () => {
     const onDeleteClick = async () => {
         await comicsService.delete(comics._id);
 
+        // TODO: Delete from state
         // setComics(state => state.filter(x => x._id !== comics._id));
 
         navigate('/catalog');
@@ -53,8 +54,8 @@ export const Details = () => {
 
                             {isOwner && (
                                 <div id="edit-delete">
-                                    <Link to={`/catalog/${comics._id}/edit`} class="btn btn-info editButton">Edit</Link>
-                                    <button type="button" class="btn btn-info deleteButton" onClick={onDeleteClick}>Delete</button>
+                                    <Link to={`/catalog/${comics._id}/edit`} className="btn btn-info editButton">Edit</Link>
+                                    <button type="button" className="btn btn-info deleteButton" onClick={onDeleteClick}>Delete</button>
                                 </div>
                             )}
                         </div>
