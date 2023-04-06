@@ -7,6 +7,7 @@ import { useService } from '../../hooks/useService';
 import { AuthContext } from '../../contexts/AuthContext';
 
 export const Details = () => {
+    const { onDeleteClick } = useContext(AuthContext);
     const { userId } = useContext(AuthContext);
     const [username, setUsername] = useState('');
     const { comicsId } = useParams();
@@ -23,14 +24,7 @@ export const Details = () => {
 
     const isOwner = comics._ownerId === userId;
 
-    const onDeleteClick = async () => {
-        await comicsService.delete(comics._id);
 
-        // TODO: Delete from state
-        // setComics(state => state.filter(x => x._id !== comics._id));
-
-        navigate('/catalog');
-    };
 
     return (
         <section id="about-us" className="about-us padd-section">
@@ -55,7 +49,7 @@ export const Details = () => {
                             {isOwner && (
                                 <div id="edit-delete">
                                     <Link to={`/catalog/${comics._id}/edit`} className="btn btn-info editButton">Edit</Link>
-                                    <button type="button" className="btn btn-info deleteButton" onClick={onDeleteClick}>Delete</button>
+                                    <button type="button" className="btn btn-info deleteButton" onClick={() => onDeleteClick(comics._id)}>Delete</button>
                                 </div>
                             )}
                         </div>

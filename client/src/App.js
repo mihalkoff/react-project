@@ -75,7 +75,15 @@ function App() {
         setComics(state => state.map(x => x._id === values._id ? result : x))
 
         navigate(`/catalog/${values._id}`);
-    }
+    };
+
+	const onDeleteClick = async (comicsId) => {
+        await comicsService.delete(comicsId);
+
+        setComics(state => state.filter(x => x._id !== comicsId));
+
+        navigate('/catalog');
+    };
 
 	const contextValues = {
 		onLoginSubmit,
@@ -83,6 +91,7 @@ function App() {
 		onLogout,
 		onCreateSubmit,
 		onEditSubmit,
+		onDeleteClick,
 		comics,
 		userId: auth._id,
 		token: auth.accessToken,
