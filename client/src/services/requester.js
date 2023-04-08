@@ -18,11 +18,15 @@ export const request = async (method = 'GET', token, url, data) => {
         const response = await fetch(url, options);
 
         if (response.ok === false) {
-            const error = await response.json();
-            throw new Error(error.message);
+            if (response.status === 204 || response.status === 404) {
+                return [];
+            } else {
+                const error = await response.json();
+                throw new Error(error.message);
+            }
         }
 
-        if (response.status === 204) {
+        if (response.status === 204 || response.status === 404) {
             return response;
         } else {
             return response.json();

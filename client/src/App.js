@@ -28,11 +28,11 @@ function App() {
 	const comicsService = comicsServiceFactory(auth.accessToken);
 
 	useEffect(() => {
-        comicsService.getAll()
-            .then(result => {
-                setComics(result)
-            })
-    }, []);
+		comicsService.getAll()
+			.then(result => {
+				setComics(result)
+			})
+	}, []);
 
 	const onLoginSubmit = async (data) => {
 		const result = await authService.login(data);
@@ -44,10 +44,10 @@ function App() {
 	const onRegisterSubmit = async (values) => {
 		const { confirmPassword, ...registerData } = values;
 
-        if (confirmPassword !== registerData.password) {
+		if (confirmPassword !== registerData.password) {
 			alert("Passwords don't match!");
-            return;
-        }
+			return;
+		}
 
 		const result = await authService.register(registerData);
 		setAuth(result);
@@ -56,34 +56,34 @@ function App() {
 	};
 
 	const onLogout = async () => {
-        await authService.logout();
+		await authService.logout();
 
-        setAuth({});
-    };
+		setAuth({});
+	};
 
 	const onCreateSubmit = async (data) => {
-        const newComics = await comicsService.create(data);
+		const newComics = await comicsService.create(data);
 
-        setComics(state => [...state, newComics]);
+		setComics(state => [...state, newComics]);
 
-        navigate('/catalog');
-    };
+		navigate('/catalog');
+	};
 
 	const onEditSubmit = async (values) => {
-        const result = await comicsService.edit(values._id, values);
+		const result = await comicsService.edit(values._id, values);
 
-        setComics(state => state.map(x => x._id === values._id ? result : x))
+		setComics(state => state.map(x => x._id === values._id ? result : x))
 
-        navigate(`/catalog/${values._id}`);
-    };
+		navigate(`/catalog/${values._id}`);
+	};
 
 	const onDeleteClick = async (comicsId) => {
-        await comicsService.delete(comicsId);
+		await comicsService.delete(comicsId);
 
-        setComics(state => state.filter(x => x._id !== comicsId));
+		setComics(state => state.filter(x => x._id !== comicsId));
 
-        navigate('/catalog');
-    };
+		navigate('/catalog');
+	};
 
 	const contextValues = {
 		onLoginSubmit,
